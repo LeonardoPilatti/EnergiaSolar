@@ -1,0 +1,31 @@
+.menu {
+   background: url("../../img/bg-intro.png") no-repeat center;
+   background-size: cover;
+   height: 750px; 
+   text-align: center;
+   p {
+       @include tipo-2(48);
+       margin: 180px;
+       color: $branco;
+   }
+}
+
+.menu-container {
+    justify-content: space-between;
+    padding: 30px 0;
+    align-items: center;
+    
+    img {
+        width: 150px;
+    }
+    ul {
+        display: flex;
+        a {
+            color: $branco;
+            padding: 10px;
+            @include tipo-1(18);
+        } &::hover {
+            color: #ff7e2b;
+        }
+    }
+}
