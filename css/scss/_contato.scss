@@ -1,0 +1,135 @@
+.contato {
+    padding: 40px 0;
+   // background: tomato;
+    h1 {
+        text-align: center;
+        margin-bottom: 60px;
+        @include tipo-2(48);
+        @include separador(#000);
+    }   
+}
+
+.contato_form {
+	padding-right: 60px;
+
+}
+
+.contato_form label{
+	display: block;
+	margin-bottom: 4px;
+    @include tipo-2(18);
+    text-align: left;
+    text-align: center;
+}
+
+.contato_form input {
+	display: block;
+	width: 50%;
+	border: 4px solid $laranja;
+	background: none;
+	padding: 7px 10px;
+	margin-bottom: 20px;
+	outline: none;
+    @include tipo-2(14);
+    margin: 0 auto 10px auto;
+}
+
+.contato_form textarea {
+	display: block;
+	width: 50%;
+	height: 120px;
+	border: 4px solid $laranja;
+	background: none;
+	padding: 7px 10px;
+	margin-bottom: 20px;
+	outline: none;
+    @include tipo-2(14);
+    margin: 0 auto;
+}
+
+.contato_form button {
+	padding: 7px 40px;
+    background: none;
+    margin: 40px auto;
+}
+
+.orcamento_dados {
+	color: $branco;
+}
+
+.contato_dados h3{
+	@include tipo-1(18);
+	text-transform: uppercase;
+	color: $laranja;
+	font-weight: bold;
+}
+
+.contato_dados span {
+	display: block;
+	@include tipo-2(18);
+	line-height: 30px;
+}
+
+.contato_dados span:nth-of-type(even) {
+	margin-bottom: 30px;
+}
+
+.contato_dados ul {
+	margin-top: 10px;
+}
+
+.contato_dados ul li {
+	display: inline-block;
+	margin-right: 10px;
+}
+
+.contato_dados ul li a {
+	border: 3px solid $laranja;
+	display: block;
+	padding: 10px;
+}
+
+.contato_dados ul li a:hover {
+	border-color: $preto;
+}
+
+.formphp label.nao-aparece, .formphp input.nao-aparece {
+	display: none !important;
+}
+
+#form-erro span, #form-send span  {
+	@include tipo-1(18);
+	margin-bottom: 10px;
+	display: block;
+}
+
+#form-send {
+	color: #31aa39;
+}
+
+#form-erro {
+	color: #f64540;
+}
+
+.btn {
+	border: 3px solid $laranja;
+	padding: 10px 30px;
+	color: $laranja;
+	@include tipo-1(14);
+	text-transform: uppercase;
+	font-weight: bold;
+	letter-spacing: .1em;
+    transition: all .5s ease;
+    margin: 0 auto;
+    display: block;
+}
+
+.btn:hover {
+	color: $branco;
+	border-color: $branco;
+}
+
+.btn.btn-preto:hover {
+	color: $preto;
+	border-color: $preto;
+}

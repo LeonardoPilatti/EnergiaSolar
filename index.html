@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Energy Sol - Sistemas Fotovoltaicos</title>
 
+    <script>
+        // esse script com document class JS eh para adicionar o javascript para navegadores que não está habilitado o javascript
+        document.documentElement.className += ' js';  
+    </script>
+
     <link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa&family=PT+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
@@ -19,13 +24,83 @@
             </a>
             <nav>
                 <ul>
-                    <li><a href="#Benefícios">Benefícios</a></li>
-                    <li><a href="#Galeria">Galeria</a></li>
-                    <li><a href="#Contato">Contato</a></li>
+                    <li><a href="#beneficios">Benefícios</a></li>
+                    <li><a href="#galeria">Galeria</a></li>
+                    <li><a href="#contato">Contato</a></li>
                 </ul>
             </nav>
         </div>
         <p>Energia limpa, renovável e inesgotável</p>
     </header>
+
+    <section class="beneficios" id="beneficios">
+        <h1>Benefícios</h1>
+        <div class="flex js-accordion">
+            <dl>
+                <dt>- Redução da poluição e das taxas de carbono</dt>
+                <dd>A energia solar é uma grande aliada na redução da poluição e das taxas de carbono. Afinal, esse recurso é 
+                    considerado limpo, ao contrário de usinas termelétricas, por exemplo, que produzem energia a partir do carvão 
+                    mineral.</dd>
+
+                <dt>- Baixíssima necessidade de manutenção</dt>
+                <dd>Por serem compostos por apenas dois principais elementos — painéis solares e inversores —, os sistemas de energia 
+                    solar apresentam baixas necessidades em relação à manutenção. Depois de instalado o sistema, os cuidados requeridos
+                    envolvem somente a limpeza e a fiscalização dos painéis solares. Tanto esses equipamentos quanto os inversores são 
+                    feitos para trabalhar continuamente. Além disso, a vida útil dos componentes do sistema fotovoltaico é longa.</dd>
+
+                <dt>- Energia Infinita</dt>
+                <dd>Considerando que a fonte da geração de energia fotovoltaica é o sol, podemos afirmar que essa alternativa nunca acabará.
+                    Afinal, o sol sempre será a estrela central do nosso sistema. Independentemente de, em alguns dias, a luz do sol 
+                    apresentar mais ou menos força, ela sempre estará presente. Por isso, a energia solar é tida como limpa, natural, 
+                    infinita e renovável.</dd>
+
+                <dt>- Diminuição do valor da conta de luz</dt>
+                <dd>Não podemos deixar de citar a grande diferença que o uso da energia solar traz para o seu bolso. Quem tem esse tipo de 
+                    sistema de geração instalado em seu imóvel consegue produzir 100% da energia que consome. Isso significa que a redução 
+                    no valor da sua conta é de até 98% e imediata. É necessário apenas pagar a taxa obrigatória da concessionária.
+                    Os únicos custos que envolvem o sistema de energia fotovoltaica são a limpeza periódica dos painéis. Ou seja: se 
+                    levarmos em consideração que a fonte operacional da energia solar é gratuita, podemos dizer que o usuário desse tipo 
+                    de alternativa terá uma economia considerável no seu orçamento.</dd>
+
+                <dt>- Valorização do imóvel</dt>
+                <dd>Seja um imóvel comercial ou residencial, pode ter certeza de que, ao ter um sistema de energia solar instalado,
+                    automaticamente o seu valor de mercado aumentará. Afinal, o possível comprador vai contabilizar toda a economia 
+                    que terá ao longo dos anos em relação aos seus gastos anteriores com energia.</dd>
+            </dl>
+        </div>
+    </section>
+
+    <section class="contato" id="contato">
+        <h1>Contato</h1>
+        <div class="">
+            <form action="enviar.php" method="post" name="form" class="formphp contato_form grid-8">
+                <label for="nome">Nome</label>
+                <input id="nome" name="nome" type="text">
+                <label for="email">E-mail</label>
+                <input id="email" name="email" type="text">
+                <label for="telefone">Telefone</label>
+                <input id="telefone" name="telefone" type="text">
+
+                <label class="nao-aparece">Se você não é um robô, deixe em branco.</label>
+                <input type="text" class="nao-aparece" name="leaveblank">
+                <label class="nao-aparece">Se você não é um robô, não mude este campo.</label>
+                <input type="text" class="nao-aparece" name="dontchange" value="http://" >
+
+                <label for="mensagem">Mensagem</label>
+                <textarea name="mensagem" id="mensagem"></textarea>
+
+                <button id="enviar" name="enviar" type="submit" class="btn btn-preto">Enviar</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="copy">
+        <div class="flex">
+            <p class="flex-item-12">© Todos os direitos reservados a <br> EnergySol - Sistemas Fotovoltaicos </p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
 </body>
 </html>

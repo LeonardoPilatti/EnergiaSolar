@@ -1,0 +1,9 @@
+.copy {
+    background: $laranja;
+    padding: 60px 0;
+    text-align: center;
+    p {
+        @include tipo-1(18);
+        margin: 15px;
+    }
+}

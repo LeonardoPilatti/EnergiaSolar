@@ -7,7 +7,9 @@
        @include tipo-2(48);
        margin: 180px;
        color: $branco;
-   }
+       @include separador(#fff);
+       line-height: 1;
+    }
 }
 
 .menu-container {
@@ -24,8 +26,22 @@
             color: $branco;
             padding: 10px;
             @include tipo-1(18);
-        } &::hover {
-            color: #ff7e2b;
-        }
+            transition: .5s;
+            &:hover {
+                color: #ff7e2b;
+            }
+          }
+      }      
+}
+
+@media (max-width: 739px) {
+    .menu {
+        height: 600px;
+    }
+    .menu p {
+        margin: 60px;
+    }
+    .menu-container ul {
+        margin-top: 20px;
     }
 }

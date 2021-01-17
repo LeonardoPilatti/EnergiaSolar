@@ -1,0 +1,25 @@
+.beneficios {
+    margin: 60px 0;
+    padding: 20px;
+    h1 {
+        text-align: center;
+        margin-bottom: 60px;
+        @include tipo-2(48);
+        @include separador(#000);
+    }
+    dt {
+        @include tipo-2(24);
+        display: block;
+        max-width: 800px;
+        margin: 0 auto;
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+        color: #ff7e2b;
+    }
+    dl {
+        @include tipo-1(18);
+        display: block;
+        max-width: 800px;
+        margin: 0 auto
+    }
+}

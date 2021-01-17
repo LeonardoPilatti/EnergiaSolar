@@ -1,5 +1,7 @@
 // cores:
 $branco: #fff;
+$laranja: #ff7e2b;
+$preto: #000; 
 
 // fontes:
 $font-1: 'PT Mono', monospace;
@@ -41,4 +43,15 @@ $font-2: 'Aref Ruqaa', serif;
     -webkit-box-shadow: $shadow;
     -moz-box-shadow: $shadow;
     box-shadow: $shadow;
+}
+
+@mixin separador ($color) {
+    &::after {
+        content: '';
+        display: block;
+        width: 100px;
+        height: 4px;
+        background: $color;
+        margin: 30px auto;
+    }
 }
