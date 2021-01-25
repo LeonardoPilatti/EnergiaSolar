@@ -1,7 +1,7 @@
 .menu {
    background: url("../img/bg-intro.png") no-repeat center;
    background-size: cover;
-   height: 755px; 
+   height: 100vh;  /// esse 100vh é para a imagem de fundo ocupar o fundo inteiro independete do tamanho da tela
    text-align: center;
    h1 {
        @include tipo-2(48);
@@ -36,10 +36,8 @@
 }
 
 @media (max-width: 739px) {
-    .menu {
-        height: 600px;
-    }
-    .menu p {
+   
+    .menu h1 {
         margin: 60px;
     }
     .menu-container ul {
