@@ -1,3 +1,30 @@
+@keyframes show-right {
+    /* from é o inicio, para começar com menos 30pixels */
+    from {
+        opacity: 0;
+        transform: translate3d(-30px, 0, 0);
+    }
+    /* to é para o final, como quero que fique, no caso posicao 0 0 0 é a inicial */
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes show-down {
+    /* from é o inicio, para começar com menos 30pixels */
+    from {
+        opacity: 0;
+        transform: translate3d(0, -30px, 0);
+    }
+    /* to é para o final, como quero que fique, no caso posicao 0 0 0 é a inicial */
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+
 // Animação da pergunta e resposta (dt e dd): 
 .js [data-anime="accordion"] dd {
     display: none;
@@ -40,3 +67,138 @@
     opacity: 1;
     transform: translate3d(0, 0, 0);
 }
+
+/* Animação para o menu hamburger (mobile): */
+
+[data-menu="button"] {
+    display: none;
+}
+
+@media (max-width: 700px) {
+    .js [data-menu="button"] {  /* .js na frente pois o menu só vai se tornar mobile quando tiver o javascript no navegador */
+        display: flex;
+        background: #ff7e2b;
+        border: 2px solid #222;
+        padding: .5rem 1rem;
+        border-radius: 4px;
+        text-transform: uppercase;
+        font-family: 'IBM Plex Mono', monospace;
+        font-weight: bold;
+        color: #FFF;
+        cursor: pointer;
+        align-items: center;
+        position: relative;
+        z-index: 300;
+        margin-top: 40px;
+    }
+
+    .js [data-menu="button"]::before {
+        content: '';
+        display: inline-block;
+        height: 2px;
+        width: 12px;
+        background: #fff;
+        box-shadow: 0 4px #FFF, 0 -4px #FFF;
+        margin-right: 4px;
+        transition: transform .3s;
+    }
+
+    .js [data-menu="button"].ativo::before {
+        transform: rotate(90deg);   /* para ele girar 90 graus quando ele estiver na classe ativo */
+    }
+
+    .js [data-menu="list"] {
+        display: none;
+        position: absolute;
+        background: #FFCE00;
+        width: 160px;
+        z-index: 200;
+        margin: 0 30px 0 0;
+        top: 20;
+        padding: 20px 0 20px 0;
+        box-shadow: 2px 2px 2px 0 rgba(0,0,0,.2);
+        right: 0px;
+    }
+
+    .js [data-menu="list"].ativo {
+        display: block;
+        animation: show-right .3s forwards;  /* essa animacao show-right está no geral.css */
+    }
+
+    .js .dropdown-menu {        /* esse é para o sobre que abre o menu, para ele ficar aberto no mobile */
+        position: static;  /* pois inicialmente é position absolut */
+        border: none;
+    }
+}
+
+
+
+//  dropdown-menu :
+
+[data-dropdown] {
+    position: relative;
+}
+
+[data-dropdown] .dropdown-menu {
+    display: none;
+}
+
+[data-dropdown]:hover .dropdown-menu,
+[data-dropdown].ativo .dropdown-menu {
+    display: block;
+    animation: show-up .3s forwards;
+}
+
+@keyframes show-up {
+    from {
+        opacity: 0;
+        transform: translate3d(0,30px,0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0,0,0);
+    }
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 34px;
+    background: #E54;
+    border: 2px solid #333;
+    z-index: 200;
+}
+
+.dropdown-menu::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -10px;
+    width: 0px;
+    height: 0px;
+    /* esses três de baixo da border é para fazer o triangulo  */
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #E54;
+}
+
+.dropdown-menu li a:hover {
+    color: #FFCE00;
+}
+
+
+
+/// horario funcionamento: 
+[data-semana]::after {
+    content: '';
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: #E54;
+    border-radius: 50%;
+    margin-left: 8px;
+    border-radius: 2px solid #000;
+} 
+
+[data-semana].aberto::after {
+    background: #3F4;
+} 

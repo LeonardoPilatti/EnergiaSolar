@@ -6,7 +6,11 @@
         margin-bottom: 60px;
         @include tipo-2(48);
         @include separador(#000);
-    }   
+	}   
+	p {
+		@include tipo-2(18);
+		margin-bottom: 20px;
+	}
 }
 
 .contato_form {
